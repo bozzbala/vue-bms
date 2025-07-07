@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('@/pages/PostCreatePage.vue'),
     },
     {
+      path: '/categories',
+      name: 'categories',
+      component: () => import('@/pages/CategoriesPage.vue'),
+    },
+    {
       path: '/posts/:id',
       name: 'post-show',
       component: () => import('@/pages/PostViewPage.vue'),
