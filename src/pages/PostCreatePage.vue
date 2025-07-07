@@ -59,6 +59,10 @@ function goBack() {
     router.back()
 }
 
+function goHome() {
+    router.push({ name: 'home' })
+}
+
 onMounted(async () => {
     try {
         const [catRes, tagRes] = await Promise.all([
@@ -82,9 +86,13 @@ function onFileChange(e) {
 
 <template>
     <div class="p-4 max-w-3xl mx-auto">
-        <!-- Кнопка Назад -->
-        <div class="mb-4">
-            <button class="text-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded" @click="goBack">Back</button>
+        <div class="flex gap-2">
+            <div class="">
+                <button class="text-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded" @click="goBack">Back</button>
+            </div>
+            <div class="">
+                <button class="text-sm px-3 py-1 bg-green-200 hover:bg-gray-300 rounded" @click="goHome">Home</button>
+            </div>
         </div>
 
         <h1 class="text-2xl font-bold mb-4">Создать пост</h1>
